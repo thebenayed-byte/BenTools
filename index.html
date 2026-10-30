@@ -1,0 +1,607 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BEN TOOLS - Free Online Tools</title>
+<meta name="description" content="BEN TOOLS : découvrez 20 outils gratuits en ligne pour calculer, convertir, gérer vos textes et votre argent.">
+<meta name="keywords" content="calculatrice, convertisseur, outils gratuits, calcul prêt, pourcentage, PDF, online tools">
+<meta name="author" content="BEN TOOLS">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#101b35">
+
+<link rel="canonical" href="https://VOTRE-PSEUDO.github.io/ben-tools/">
+
+<style>
+:root {
+  --bg:#f4f7fc;
+  --card:#ffffff;
+  --text:#17233c;
+  --muted:#718096;
+  --primary:#2563eb;
+  --border:#e5eaf2;
+}
+* {box-sizing:border-box}
+body {
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+header {
+  background:#101b35;
+  color:white;
+  padding:17px 7%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:15px;
+}
+.logo {font-size:25px;font-weight:900;letter-spacing:1px}
+.logo span {color:#60a5fa}
+nav {display:flex;gap:22px;flex-wrap:wrap}
+nav a {color:#dbeafe;text-decoration:none;font-size:14px}
+nav a:hover {color:#60a5fa}
+.hero {
+  background:linear-gradient(130deg,#101b35,#1749a5);
+  color:white;
+  padding:75px 20px;
+  text-align:center;
+}
+.hero h1 {font-size:42px;margin:0 0 15px}
+.hero p {color:#dbeafe;font-size:17px;line-height:1.6}
+.search {
+  width:min(550px,90%);
+  padding:16px 20px;
+  border:0;
+  border-radius:10px;
+  margin-top:22px;
+  font-size:16px;
+  outline:none;
+}
+.container {max-width:1150px;margin:auto;padding:40px 20px}
+.section-title {font-size:25px;margin-bottom:8px}
+.subtitle {color:var(--muted);margin-bottom:25px}
+.tools {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(225px,1fr));
+  gap:18px;
+}
+.tool-card {
+  background:var(--card);
+  padding:23px;
+  border:1px solid var(--border);
+  border-radius:13px;
+  cursor:pointer;
+  transition:.2s;
+}
+.tool-card:hover {
+  transform:translateY(-4px);
+  border-color:var(--primary);
+  box-shadow:0 8px 25px #1e40af12;
+}
+.tool-icon {font-size:30px}
+.tool-card h3 {margin:13px 0 8px;font-size:17px}
+.tool-card p {font-size:13px;color:var(--muted);line-height:1.5}
+.category {font-size:11px;color:var(--primary);font-weight:bold;text-transform:uppercase}
+.ad-space {
+  background:#edf1f8;
+  border:1px dashed #b8c3d6;
+  min-height:100px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#8491a5;
+  margin:30px auto;
+  text-align:center;
+  font-size:12px;
+}
+.workspace {
+  background:white;
+  border:1px solid var(--border);
+  border-radius:15px;
+  padding:28px;
+  max-width:650px;
+  margin:30px auto;
+  display:none;
+}
+.workspace h2 {margin-top:0}
+.field {margin:18px 0}
+.field label {display:block;font-weight:bold;font-size:14px;margin-bottom:8px}
+.field input,.field textarea,.field select {
+  width:100%;
+  padding:13px;
+  border:1px solid #d8e0ed;
+  border-radius:8px;
+  font-size:15px;
+  font-family:inherit;
+}
+.field textarea {min-height:120px;resize:vertical}
+.primary-btn {
+  background:var(--primary);
+  color:white;
+  border:0;
+  border-radius:8px;
+  padding:14px 22px;
+  font-size:15px;
+  cursor:pointer;
+  width:100%;
+  font-weight:bold;
+}
+.primary-btn:hover {background:#1749b7}
+.back-btn {
+  background:#edf2fa;
+  color:#334155;
+  border:0;
+  padding:9px 14px;
+  border-radius:7px;
+  cursor:pointer;
+  margin-bottom:20px;
+}
+.result {
+  background:#eff6ff;
+  border-left:4px solid var(--primary);
+  border-radius:7px;
+  padding:18px;
+  margin-top:20px;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+  display:none;
+  line-height:1.6;
+}
+.copy-btn {
+  margin-top:12px;
+  padding:9px 15px;
+  border:0;
+  border-radius:7px;
+  background:#dbeafe;
+  color:#1d4ed8;
+  cursor:pointer;
+}
+footer {
+  background:#101b35;
+  color:#dbeafe;
+  padding:40px 20px;
+  text-align:center;
+  margin-top:50px;
+}
+footer a {color:#93c5fd;text-decoration:none;margin:8px}
+footer p {font-size:13px;line-height:1.8}
+.hidden {display:none!important}
+@media(max-width:600px) {
+ .hero {padding:55px 15px}
+ .hero h1 {font-size:31px}
+ header {justify-content:center}
+ nav {justify-content:center}
+ .container {padding:30px 15px}
+ .workspace {padding:20px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">BEN <span>TOOLS</span></div>
+  <nav>
+    <a href="#">Accueil</a>
+    <a href="#tools">Tous les outils</a>
+    <a href="#about">À propos</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Everything you need, in one place.</h1>
+  <p>Des outils intelligents, gratuits et accessibles à tous.<br>
+  Calculate, convert, create and simplify your life.</p>
+  <input class="search" id="search" placeholder="Rechercher un outil...">
+</section>
+
+<main class="container">
+
+  <div class="ad-space">
+    Espace publicitaire
+  </div>
+
+  <section id="tools">
+    <h2 class="section-title">Nos outils gratuits</h2>
+    <p class="subtitle">Choisissez un outil et commencez immédiatement.</p>
+    <div class="tools" id="toolGrid"></div>
+  </section>
+
+  <div class="ad-space">
+    Espace publicitaire
+  </div>
+
+  <section class="workspace" id="workspace">
+    <button class="back-btn" onclick="closeTool()">← Retour aux outils</button>
+    <h2 id="toolTitle"></h2>
+    <p id="toolDescription" class="subtitle"></p>
+    <div id="toolFields"></div>
+    <button class="primary-btn" onclick="calculate()">Exécuter le calcul</button>
+    <div class="result" id="result"></div>
+    <button class="copy-btn hidden" id="copyBtn" onclick="copyResult()">Copier le résultat</button>
+  </section>
+
+  <section id="about" style="margin-top:55px">
+    <h2>À propos de BEN TOOLS</h2>
+    <p style="color:#718096;line-height:1.8">
+      BEN TOOLS est une plateforme d'outils en ligne conçue pour
+      simplifier les tâches quotidiennes. Nos outils sont gratuits,
+      rapides et accessibles partout dans le monde.
+    </p>
+  </section>
+
+  <section id="contact" style="margin-top:40px">
+    <h2>Contact</h2>
+    <p>Pour toute question ou suggestion :</p>
+    <a href="mailto:thebenayed@gmail.com">thebenayed@gmail.com</a>
+  </section>
+
+</main>
+
+<footer>
+  <div class="logo">BEN <span>TOOLS</span></div>
+  <p>Free online tools for everyone.</p>
+  <p>
+    <a href="#about">À propos</a>
+    <a href="privacy.html">Confidentialité</a>
+    <a href="terms.html">Conditions d'utilisation</a>
+  </p>
+  <p>© 2026 BEN TOOLS. All rights reserved.</p>
+</footer>
+
+<script>
+// ======================================
+// BEN TOOLS - 20 OUTILS GRATUITS
+// ======================================
+
+const tools = [
+{
+ id:"percentage",icon:"📊",name:"Calculateur de pourcentage",
+ desc:"Calculez rapidement un pourcentage.",
+ fields:[["number","value","Valeur","100"],["number","rate","Pourcentage (%)","20"]]
+},
+{
+ id:"discount",icon:"🏷️",name:"Calculateur de réduction",
+ desc:"Calculez le prix après une réduction.",
+ fields:[["number","price","Prix initial","100"],["number","discount","Réduction (%)","15"]]
+},
+{
+ id:"loan",icon:"🏦",name:"Simulateur de prêt",
+ desc:"Estimez vos mensualités et le coût de votre crédit.",
+ fields:[["number","capital","Capital emprunté","10000"],["number","rate","Taux annuel (%)","8"],["number","months","Durée (mois)","24"]]
+},
+{
+ id:"compound",icon:"📈",name:"Intérêts composés",
+ desc:"Simulez la croissance d'un capital.",
+ fields:[["number","capital","Capital initial","1000"],["number","rate","Taux annuel (%)","5"],["number","years","Durée (années)","10"]]
+},
+{
+ id:"age",icon:"🎂",name:"Calculateur d'âge",
+ desc:"Calculez votre âge exact.",
+ fields:[["date","birth","Date de naissance",""]]
+},
+{
+ id:"dates",icon:"📅",name:"Différence entre deux dates",
+ desc:"Calculez le nombre de jours entre deux dates.",
+ fields:[["date","date1","Première date",""],["date","date2","Deuxième date",""]]
+},
+{
+ id:"words",icon:"📝",name:"Compteur de mots",
+ desc:"Comptez les mots, caractères et phrases.",
+ fields:[["textarea","text","Votre texte","Écrivez ou collez votre texte ici"]]
+},
+{
+ id:"case",icon:"🔠",name:"Convertisseur de texte",
+ desc:"Transformez votre texte en majuscules ou minuscules.",
+ fields:[["textarea","text","Votre texte","Bonjour le monde"],["select","mode","Transformation","upper","Majuscules|upper;Minuscules|lower;Première lettre de chaque mot|title"]]
+},
+{
+ id:"reverse",icon:"🔄",name:"Inverser un texte",
+ desc:"Inversez l'ordre des caractères.",
+ fields:[["textarea","text","Votre texte","Bonjour"]]
+},
+{
+ id:"duplicates",icon:"🧹",name:"Supprimer les doublons",
+ desc:"Supprimez les lignes répétées.",
+ fields:[["textarea","text","Votre liste","Pomme\nOrange\nPomme\nBanane"]]
+},
+{
+ id:"json",icon:"{ }",name:"Formateur JSON",
+ desc:"Organisez et vérifiez votre code JSON.",
+ fields:[["textarea","text","Votre JSON",'{"nom":"Ben","age":30}']]
+},
+{
+ id:"url",icon:"🔗",name:"Encodeur URL",
+ desc:"Encodez ou décodez un texte pour les URL.",
+ fields:[["textarea","text","Votre texte","Bonjour le monde"],["select","mode","Action","encode","Encoder|encode;Décoder|decode"]]
+},
+{
+ id:"base64",icon:"🔐",name:"Convertisseur Base64",
+ desc:"Encodez ou décodez du texte en Base64.",
+ fields:[["textarea","text","Votre texte","Bonjour"],["select","mode","Action","encode","Encoder|encode;Décoder|decode"]]
+},
+{
+ id:"password",icon:"🔑",name:"Générateur de mots de passe",
+ desc:"Créez un mot de passe aléatoire.",
+ fields:[["number","length","Longueur (4 à 64)","16"]]
+},
+{
+ id:"length",icon:"📏",name:"Convertisseur de longueur",
+ desc:"Convertissez mètres, kilomètres, centimètres et pieds.",
+ fields:[["number","value","Valeur","100"],["select","unit","Unité de départ","m","Mètres|m;Kilomètres|km;Centimètres|cm;Millimètres|mm;Pieds|ft"]]
+},
+{
+ id:"weight",icon:"⚖️",name:"Convertisseur de poids",
+ desc:"Convertissez kilogrammes, grammes et livres.",
+ fields:[["number","value","Valeur","10"],["select","unit","Unité de départ","kg","Kilogrammes|kg;Grammes|g;Livres|lb"]]
+},
+{
+ id:"temperature",icon:"🌡️",name:"Convertisseur de température",
+ desc:"Convertissez Celsius et Fahrenheit.",
+ fields:[["number","value","Température","25"],["select","unit","Unité de départ","C","Celsius|C;Fahrenheit|F"]]
+},
+{
+ id:"volume",icon:"🥤",name:"Convertisseur de volume",
+ desc:"Convertissez litres, millilitres et gallons US.",
+ fields:[["number","value","Valeur","5"],["select","unit","Unité de départ","L","Litres|L;Millilitres|ml;Gallons US|gal"]]
+},
+{
+ id:"tip",icon:"💰",name:"Calculateur de pourboire",
+ desc:"Calculez un pourboire et partagez l'addition.",
+ fields:[["number","bill","Montant de l'addition","100"],["number","rate","Pourboire (%)","10"],["number","people","Nombre de personnes","2"]]
+},
+{
+ id:"bmi",icon:"🏃",name:"Calculateur IMC",
+ desc:"Calculez votre indice de masse corporelle.",
+ fields:[["number","weight","Poids (kg)","70"],["number","height","Taille (cm)","175"]]
+}
+];
+
+let currentTool = null;
+let lastResult = "";
+
+function renderTools(list=tools) {
+ const grid=document.getElementById("toolGrid");
+ grid.innerHTML="";
+ list.forEach(tool=>{
+  const card=document.createElement("div");
+  card.className="tool-card";
+  card.innerHTML=`
+   <div class="tool-icon">${tool.icon}</div>
+   <span class="category">OUTIL GRATUIT</span>
+   <h3>${tool.name}</h3>
+   <p>${tool.desc}</p>`;
+  card.onclick=()=>openTool(tool.id);
+  grid.appendChild(card);
+ });
+ if(!list.length) grid.innerHTML="<p>Aucun outil trouvé.</p>";
+}
+
+function openTool(id) {
+ currentTool=tools.find(t=>t.id===id);
+ document.getElementById("toolTitle").textContent=currentTool.name;
+ document.getElementById("toolDescription").textContent=currentTool.desc;
+ const fields=document.getElementById("toolFields");
+ fields.innerHTML="";
+ currentTool.fields.forEach(f=>{
+  const [type,name,label,value,options]=f;
+  const div=document.createElement("div");
+  div.className="field";
+  const lab=document.createElement("label");
+  lab.textContent=label;
+  lab.htmlFor=name;
+  div.appendChild(lab);
+  let input;
+  if(type==="textarea") {
+   input=document.createElement("textarea");
+   input.value=value;
+  } else if(type==="select") {
+   input=document.createElement("select");
+   options.split(";").forEach(item=>{
+    const [txt,val]=item.split("|");
+    const opt=document.createElement("option");
+    opt.value=val;
+    opt.textContent=txt;
+    input.appendChild(opt);
+   });
+   input.value=value;
+  } else {
+   input=document.createElement("input");
+   input.type=type;
+   input.value=value;
+  }
+  input.id=name;
+  input.name=name;
+  div.appendChild(input);
+  fields.appendChild(div);
+ });
+ document.getElementById("result").style.display="none";
+ document.getElementById("copyBtn").classList.add("hidden");
+ document.getElementById("workspace").style.display="block";
+ document.getElementById("workspace").scrollIntoView({behavior:"smooth"});
+}
+
+function get(name) {
+ return document.getElementById(name).value;
+}
+function num(name) {
+ const v=Number(get(name));
+ if(!Number.isFinite(v)) throw Error("Veuillez saisir un nombre valide.");
+ return v;
+}
+function fmt(v) {
+ return new Intl.NumberFormat("fr-FR",{maximumFractionDigits:4}).format(v);
+}
+
+function calculate() {
+ try {
+  let output="";
+  switch(currentTool.id) {
+
+   case "percentage":
+    output=fmt(num("value")*num("rate")/100);
+    break;
+
+   case "discount": {
+    let p=num("price"),d=num("discount");
+    if(d<0||d>100) throw Error("La réduction doit être comprise entre 0 et 100 %.");
+    output="Prix final : "+fmt(p*(1-d/100))+"\nÉconomie : "+fmt(p*d/100);
+    break;
+   }
+
+   case "loan": {
+    let p=num("capital"),r=num("rate")/1200,n=num("months");
+    if(p<=0||n<=0||r<0) throw Error("Vérifiez les valeurs saisies.");
+    let m=r===0?p/n:p*r/(1-Math.pow(1+r,-n));
+    output="Mensualité : "+fmt(m)+"\nTotal remboursé : "+fmt(m*n)+"\nCoût des intérêts : "+fmt(m*n-p);
+    break;
+   }
+
+   case "compound": {
+    let p=num("capital"),r=num("rate")/100,n=num("years");
+    let total=p*Math.pow(1+r,n);
+    output="Capital final : "+fmt(total)+"\nIntérêts gagnés : "+fmt(total-p);
+    break;
+   }
+
+   case "age": {
+    let birth=new Date(get("birth")+"T00:00:00");
+    if(!get("birth")||isNaN(birth)) throw Error("Saisissez une date valide.");
+    let today=new Date();
+    if(birth>today) throw Error("La date de naissance ne peut pas être future.");
+    let age=today.getFullYear()-birth.getFullYear();
+    if(today.getMonth()<birth.getMonth()||(today.getMonth()===birth.getMonth()&&today.getDate()<birth.getDate())) age--;
+    output="Votre âge : "+age+" ans.";
+    break;
+   }
+
+   case "dates": {
+    let a=new Date(get("date1")+"T00:00:00"),b=new Date(get("date2")+"T00:00:00");
+    if(!get("date1")||!get("date2")||isNaN(a)||isNaN(b)) throw Error("Saisissez les deux dates.");
+    output="Différence : "+Math.abs(Math.round((b-a)/86400000))+" jours.";
+    break;
+   }
+
+   case "words": {
+    let t=get("text"),words=t.trim()?t.trim().split(/\s+/).length:0;
+    let chars=t.length;
+    let sentences=t.trim()?t.split(/[.!?]+/).filter(s=>s.trim()).length:0;
+    output="Mots : "+words+"\nCaractères (espaces compris) : "+chars+"\nCaractères sans espaces : "+t.replace(/\s/g,"").length+"\nPhrases : "+sentences;
+    break;
+   }
+
+   case "case": {
+    let t=get("text"),mode=get("mode");
+    output=mode==="upper"?t.toUpperCase():mode==="lower"?t.toLowerCase():t.toLowerCase().replace(/\b\p{L}/gu,c=>c.toUpperCase());
+    break;
+   }
+
+   case "reverse":
+    output=Array.from(get("text")).reverse().join("");
+    break;
+
+   case "duplicates":
+    output=[...new Set(get("text").split(/\r?\n/).map(x=>x.trim()).filter(Boolean))].join("\n");
+    break;
+
+   case "json":
+    output=JSON.stringify(JSON.parse(get("text")),null,2);
+    break;
+
+   case "url":
+    output=get("mode")==="encode"?encodeURIComponent(get("text")):decodeURIComponent(get("text"));
+    break;
+
+   case "base64":
+    output=get("mode")==="encode"?btoa(unescape(encodeURIComponent(get("text")))):decodeURIComponent(escape(atob(get("text"))));
+    break;
+
+   case "password": {
+    let n=Math.floor(num("length"));
+    if(n<4||n>64) throw Error("Choisissez une longueur entre 4 et 64.");
+    const chars="ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%&*";
+    const random=new Uint32Array(n);
+    crypto.getRandomValues(random);
+    output=Array.from(random,x=>chars[x%chars.length]).join("");
+    break;
+   }
+
+   case "length": {
+    let factors={m:1,km:1000,cm:.01,mm:.001,ft:.3048};
+    let v=num("value")*factors[get("unit")];
+    output="Mètres : "+fmt(v)+" m\nKilomètres : "+fmt(v/1000)+" km\nCentimètres : "+fmt(v*100)+" cm\nMillimètres : "+fmt(v*1000)+" mm\nPieds : "+fmt(v/.3048)+" ft";
+    break;
+   }
+
+   case "weight": {
+    let factors={kg:1,g:.001,lb:.45359237};
+    let v=num("value")*factors[get("unit")];
+    output="Kilogrammes : "+fmt(v)+" kg\nGrammes : "+fmt(v*1000)+" g\nLivres : "+fmt(v/.45359237)+" lb";
+    break;
+   }
+
+   case "temperature": {
+    let v=num("value"),c=get("unit")==="C"?v:(v-32)*5/9;
+    output="Celsius : "+fmt(c)+" °C\nFahrenheit : "+fmt(c*9/5+32)+" °F";
+    break;
+   }
+
+   case "volume": {
+    let factors={L:1,ml:.001,gal:3.785411784};
+    let v=num("value")*factors[get("unit")];
+    output="Litres : "+fmt(v)+" L\nMillilitres : "+fmt(v*1000)+" ml\nGallons US : "+fmt(v/3.785411784)+" gal";
+    break;
+   }
+
+   case "tip": {
+    let b=num("bill"),r=num("rate"),p=Math.floor(num("people"));
+    if(p<1||r<0) throw Error("Vérifiez le pourboire et le nombre de personnes.");
+    let tip=b*r/100;
+    output="Pourboire : "+fmt(tip)+"\nTotal : "+fmt(b+tip)+"\nPar personne : "+fmt((b+tip)/p);
+    break;
+   }
+
+   case "bmi": {
+    let w=num("weight"),h=num("height")/100;
+    if(w<=0||h<=0) throw Error("Saisissez un poids et une taille valides.");
+    output="Votre IMC : "+fmt(w/(h*h))+"\nCet indicateur est une estimation et ne constitue pas un diagnostic médical.";
+    break;
+   }
+  }
+  lastResult=output;
+  const box=document.getElementById("result");
+  box.textContent=output;
+  box.style.display="block";
+  document.getElementById("copyBtn").classList.remove("hidden");
+ } catch(e) {
+  alert("Erreur : "+e.message);
+ }
+}
+
+function copyResult() {
+ navigator.clipboard.writeText(lastResult)
+ .then(()=>alert("Résultat copié !"))
+ .catch(()=>alert("Impossible de copier automatiquement."));
+}
+
+function closeTool() {
+ document.getElementById("workspace").style.display="none";
+ document.getElementById("tools").scrollIntoView({behavior:"smooth"});
+}
+
+document.getElementById("search").addEventListener("input",e=>{
+ const q=e.target.value.toLowerCase();
+ renderTools(tools.filter(t=>(t.name+" "+t.desc).toLowerCase().includes(q)));
+});
+
+renderTools();
+</script>
+
+</body>
+</html>
